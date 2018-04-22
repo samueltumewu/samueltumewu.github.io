@@ -7,9 +7,46 @@
 		<link rel="stylesheet" type="text/css" href="style.css">
 		<script src=jmobile/jquery.js></script>
 		<script src=jmobile/jquery.mobile-1.4.5.js></script>
-		<link rel="stylesheet" type="text/css" href="js/app.js">
-		<link rel="stylesheet" type="text/css" href="js/controllers/mainController.js">
+		<script>
 
+			$(document).ready(function() {
+				$("#hitungPangkat").tap(function () {
+					var a = parseInt($("#a").val());
+					var b = parseInt($("#b").val());
+					var hasil = Math.pow(a,b);
+		      document.getElementById("hasilPangkat").innerHTML = hasil;
+		    });
+				$("#hitungFaktorial").tap(function (){
+					var c = $("#c").val();
+					var hasil= parseInt(c);
+
+					for (var i = c-1; i > 0; i--) {
+						hasil = hasil * i;
+					}
+					document.getElementById("hasilFaktorial").innerHTML = hasil;
+				});
+				function gantiBg(){
+					var r = $("#red").val();
+					var g = $("#green").val();
+					var b = $("#blue").val();
+					console.log(r + " " + g + " " + b);
+					document.getElementById("winpage2").style.background = "rgb("+r+","+g+","+b+")";
+				}
+				function lihatWarna(){
+					var r = $("#red").val();
+					var g = $("#green").val();
+					var b = $("#blue").val();
+					console.log(r + " " + g + " " + b);
+					document.getElementById("lihatwarna").style.background = "rgb("+r+","+g+","+b+")";
+				}
+				document.getElementById("button_warnabg").addEventListener("click", function(){
+					gantiBg();
+				});
+				document.getElementById("button_lihatwarna").addEventListener("click", function(){
+					lihatWarna();
+				});
+			});
+		</script>
 	</head>
 
 	<body>
@@ -57,14 +94,14 @@
 						<input type="number" name="number-a" data-clear-btn="true" id="a" >
 					<label for="number-b" >masukkan angka pangkat</label>
 						<input type="number" name="number-b" data-clear-btn="true" id="b" >
-					<input type="button" value="HITUNG PANGKAT" id="button_pangkat">
+					<input type="button" value="HITUNG PANGKAT" id="hitungPangkat">
 					<p style="border: 1px solid black;">HASIL PANGKAT: <span id="hasilPangkat"> </span></p>
 
 					<br><h3>MENGHITUNG FAKTORIAL</h3>
 					<label for="number-c" >masukkan angka</label>
 						<input type="number" name="number-c" data-clear-btn="true" id="c" >
 					<p style="border: 1px solid black;">HASIL FAKTORIAL: <span id="hasilFaktorial"> </span></p>
-					<input type="button" value="HITUNG FAKTORIAL" id="button_faktorial">
+					<input type="button" value="HITUNG FAKTORIAL" id="hitungFaktorial">
 				</form>
 
 			</div>
@@ -178,50 +215,5 @@
 		</div>
 
 	</body>
-	<script>
-		function hitungPangkat(){
-			var a = $("#a").val();
-			var b = $("#b").val();
-			document.getElementById("hasilPangkat").innerHTML = a**b;
-		}
-		function hitungFaktorial(){
-			var c = $("#c").val();
-			var hasil=c;
 
-			for (var i = c-1; i > 0; i--) {
-				hasil = hasil * i;
-			}
-			document.getElementById("hasilFaktorial").innerHTML = hasil;
-		}
-		function gantiBg(){
-			var r = $("#red").val();
-			var g = $("#green").val();
-			var b = $("#blue").val();
-			console.log(r + " " + g + " " + b);
-			document.getElementById("winpage2").style.background = "rgb("+r+","+g+","+b+")";
-		}
-		function lihatWarna(){
-			var r = $("#red").val();
-			var g = $("#green").val();
-			var b = $("#blue").val();
-			console.log(r + " " + g + " " + b);
-			document.getElementById("lihatwarna").style.background = "rgb("+r+","+g+","+b+")";
-		}
-
-
-		$(document).ready(function() {
-			document.getElementById("button_pangkat").addEventListener("click", function(){
-				hitungPangkat();
-			});
-			document.getElementById("button_faktorial").addEventListener("click", function(){
-				hitungFaktorial();
-			});
-			document.getElementById("button_warnabg").addEventListener("click", function(){
-				gantiBg();
-			});
-			document.getElementById("button_lihatwarna").addEventListener("click", function(){
-				lihatWarna();
-			});
-		});
-	</script>
 </html>
