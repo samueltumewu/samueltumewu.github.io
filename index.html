@@ -1,0 +1,224 @@
+<!doctype html>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>TEST 1</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="jmobile/jquery.mobile-1.4.5.css" />
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src=jmobile/jquery.js></script>
+		<script src=jmobile/jquery.mobile-1.4.5.js></script>
+		<link rel="stylesheet" type="text/css" href="js/app.js">
+		<link rel="stylesheet" type="text/css" href="js/controllers/mainController.js">
+	</head>
+
+	<body>
+		<!--HALAMAN MENU -->
+		<div data-role=page id=win1>
+			<div data-role=header id="header-win" data-add-back-btn=true>
+				<h1>WINDOW 1</h1>
+			</div>
+			<div data-role=content>
+				<div data-role="collapsible" data-collapsed="true" style="margin-bottom: 50px;" 	>
+					 <h4>NAVIGASI COMBOBOX</h4>
+	  				 <ul data-role="listview" id="listview">
+						<li><a href="#winpage1">KALKULATOR</a></li>
+						<li><a href="#winpage2">MELIHAT WARNA</a></li>
+						<li><a href="#winpage3">RANGKUMAN MATERI</a></li>
+					</ul>
+				</div>		
+
+				<div class="bagianBawah">
+					<p><a href="#winpage1">lanjut ke halaman kedua</a></p>
+				</div>
+			</div>
+			<div data-role=footer data-position=fixed>
+				<h1>WINDOW BOTTOM 1</h1>
+			</div>
+		</div>
+		<!-- END OF HALAMAN NAVIGASI MENU -->
+
+		<div data-role=page id=winpage1>
+			<div data-role=header id="header-win" data-add-back-btn=true>
+				<h1>WINDOW 2</h1>
+			</div>
+			<div data-role=content>
+				<div data-role="collapsible" data-collapsed="true" style="margin-bottom: 50px;">
+					 <h4>NAVIGASI COMBOBOX</h4>
+	  				 <ul data-role="listview" id="listview">
+						<li><a href="#winpage1">KALKULATOR</a></li>
+						<li><a href="#winpage2">MELIHAT WARNA</a></li>
+						<li><a href="#winpage3">RANGKUMAN MATERI</a></li>
+					</ul>
+				</div>		
+				<form>
+					<h3>MENGHITUNG PANGKAT</h3>
+					<label for="number-a" >masukkan angka basis</label>
+						<input type="number" name="number-a" data-clear-btn="true" value="0" id="a" >
+					<label for="number-b" >masukkan angka pangkat</label>
+						<input type="number" name="number-b" data-clear-btn="true" value="0" id="b" >
+					<input type="button" value="HITUNG PANGKAT" id="button_pangkat">
+					<p style="border: 1px solid black;">HASIL PANGKAT: <span id="hasilPangkat"> </span></p>
+
+					<br><h3>MENGHITUNG FAKTORIAL</h3>
+					<label for="number-c" >masukkan angka</label>
+						<input type="number" name="number-c" data-clear-btn="true" value="0" id="c" >
+					<p style="border: 1px solid black;">HASIL FAKTORIAL: <span id="hasilFaktorial"> </span></p>
+					<input type="button" value="HITUNG FAKTORIAL" id="button_faktorial">
+				</form>
+
+			</div>
+			<div data-role=footer data-position=fixed id="footer-win">
+				<h1>WINDOW BOTTOM 2</h1>
+			</div>
+		</div>
+		<!-- END OF HALAMAN KALKULATOR -->
+
+		<div data-role=page id="winpage2">
+			<div data-role=header id="header-win" data-add-back-btn=true>
+				<h1>WINDOW 2</h1>
+			</div>
+			<div data-role=content>
+				<div data-role="collapsible" data-collapsed="true" style="margin-bottom: 50px;">
+					 <h4>NAVIGASI COMBOBOX</h4>
+	  				 <ul data-role="listview" id="listview">
+						<li><a href="#winpage1">KALKULATOR</a></li>
+						<li><a href="#winpage2">MELIHAT WARNA</a></li>
+						<li><a href="#winpage3">RANGKUMAN MATERI</a></li>
+					</ul>
+				</div>		
+				<label for="slider-3">RED: </label>
+					<input name="slider-3" id="red" min="0" max="255" value="0" data-popup-enabled="true" type="range">
+				<label for="slider-3">GREEN: </label>
+					<input name="slider-3" id="green" min="0" max="255" value="0" data-popup-enabled="true" type="range" >
+				<label for="slider-3">BLUE: </label>
+					<input name="slider-3" id="blue" min="0" max="255" value="0" data-popup-enabled="true" type="range" >
+
+				<input type="button" value="GANTI WARNA BACKGROUND" id="button_warnabg"> 
+				<br><br>
+
+				<a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Read ME</a>
+					<div data-role="popup" id="popupBasic">
+						<p>Tombol "Lihat Warna" untuk memunculkan warna di kotak yang telah disediakan dibawah</p>
+					</div>	
+				<input type="button" value="LIHAT WARNA" id="button_lihatwarna">
+				<div id="lihatwarna" ></div>
+
+			</div>
+			<div data-role=footer data-position=fixed id="footer-win">
+				<h1>WINDOW BOTTOM 2</h1>
+			</div>
+		</div>
+		<!-- END OF HALAMAN GANTI WARNA -->
+
+		<div data-role=page id="winpage3">
+			<div data-role=header id="header-win" data-add-back-btn=true>
+				<h1>WINDOW 2</h1>
+			</div>
+
+			<div data-role=content>			
+				<div data-role="collapsible" data-collapsed="true" style="margin-bottom: 50px;">
+					 <h4>NAVIGASI COMBOBOX</h4>
+	  				 <ul data-role="listview" id="listview">
+						<li><a href="#winpage1">KALKULATOR</a></li>
+						<li><a href="#winpage2">MELIHAT WARNA</a></li>
+						<li><a href="#winpage3">RANGKUMAN MATERI</a></li>
+					</ul>
+				</div>		
+
+				<h3>Rangkuman Materi PPM</h3>
+				<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke" data-column-btn-text="Kolom yang ingin dilihat">
+					<thead>
+						<th data-priority="1">No</th>
+						<th data-priority="5">Nama Materi</th>
+					</thead>
+					<tbody>
+						<tr>
+							<td>1</td>
+							<td><a href="#panel_sejarah">sejarah aplikasi mobile</a></td>
+						</tr>
+						<tr>
+							<td>2</td>
+							<td><a href="#panel_github">github</a></td>
+						</tr>
+						<tr>
+							<td>3</td>
+							<td><a href="#panel_jquery">jquery mobile</a></td>
+						</tr>
+						<tr>
+							<td>4</td>
+							<td><a href="#panel_angularJS">Angular JS</a></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div data-role="panel" id="panel_sejarah" >
+ 					 <h4>Sejarah Aplikasi Mobile</h4>
+ 					 <p>semula masih memakai koneksi yang sangat lambat, sekarang sudah serba cepat</p>
+ 					 <p>semula gadget hanya sebagai alat komunikasi, namun sekarang sudah menjadi perangkat Internet of Everything</p>
+				</div>
+				<div data-role="panel" id="panel_github" data-position="right">
+ 					 <h4>GITHUB</h4>
+ 					 <p>Github adalah sebuah aplikasi version control sistem</p> 
+ 				</div>
+ 				<div data-role="panel" id="panel_jquery">
+ 					 <h4>JQUERY</h4>
+ 					 <p>Jquery adalah framework untuk tampilan web, koding lebih mudah jika memakai framework</p> 
+ 					 <p>jquery tersedia juga dalam jquerymobile</p>
+ 				</div>
+ 				<div data-role="panel" id="panel_angularJS" data-position="right">
+ 					 <h4>ANGULAR JS</h4>
+ 					 <p>Angular JS adalah framework yang bisa dipakai untuk mendesain sistem Model-View-Controller</p>
+ 				</div>
+			</div>
+
+			<div data-role=footer data-position=fixed id="footer-win">
+				<h1>WINDOW BOTTOM 2</h1>
+			</div>
+		</div>
+
+	</body>
+
+	<script type="text/javascript">
+		function hitungPangkat(){
+			var a = $("#a").val();
+			var b = $("#b").val();
+			document.getElementById("hasilPangkat").innerHTML = a**b;
+		}
+		function hitungFaktorial(){
+			var c = $("#c").val();
+			var hasil=c;
+
+			for (var i = c-1; i > 0; i--) {
+				hasil = hasil * i;
+			}
+			document.getElementById("hasilFaktorial").innerHTML = hasil;
+		}
+		function gantiBg(){
+			var r = $("#red").val();
+			var g = $("#green").val();
+			var b = $("#blue").val();
+			console.log(r + " " + g + " " + b);
+			document.getElementById("winpage2").style.background = "rgb("+r+","+g+","+b+")";
+		}
+		function lihatWarna(){
+			var r = $("#red").val();
+			var g = $("#green").val();
+			var b = $("#blue").val();
+			console.log(r + " " + g + " " + b);
+			document.getElementById("lihatwarna").style.background = "rgb("+r+","+g+","+b+")";
+		}
+		document.getElementById("button_pangkat").addEventListener("click", function(){
+			hitungPangkat();
+		});
+		document.getElementById("button_faktorial").addEventListener("click", function(){
+			hitungFaktorial();
+		});
+		document.getElementById("button_warnabg").addEventListener("click", function(){
+			gantiBg();
+		});
+		document.getElementById("button_lihatwarna").addEventListener("click", function(){
+			lihatWarna();
+		});
+	</script>
+</html>
