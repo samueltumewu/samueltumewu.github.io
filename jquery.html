@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TES 1 TEKWEB</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=4" />
+	
+	<script>
+		$(document).ready(function(){
+			$('button').on('click',function(){
+				$(this).closest('tr').remove();
+			});
+
+			var total=0
+			$('input').on('input', function(){
+				total = $('#a').val()*$('#aa').val() + $('#b').val()*$('#bb').val() + $('#c').val()*$('#cc').val();
+				$('#hasil').text(total);
+
+				if(total >= 1000){
+					$('#hasil').css({'background-color':'red', 'color':'white'});
+				}else{
+					$('#hasil').css({'background-color':'white', 'color':'green'});
+				}
+			});
+
+		});
+	</script>
+</head>
+<body class="container">
+	<h1>bootstrap page</h1>
+
+	<h5 style="margin-top: 20px;">Tabel data</h5>
+	<table class="table table-bordered">
+		<tr>
+			<th>id</th>
+			<th>nama</th>
+			<th>email</th>
+			<th></th>
+		</tr>
+		<tr>
+			<th>1</th>
+			<th>john</th>
+			<th>gmail.com</th>
+			<th><button type="button" class="btn btn-danger">Del</button></th>
+		</tr>
+		<tr>
+			<th>2</th>
+			<th>doe</th>
+			<th>yahoo.com</th>
+			<th><button type="button" class="btn btn-danger">Del</button></th>
+		</tr>
+		<tr>
+			<th>3</th>
+			<th>drax</th>
+			<th>mail.com</th>
+			<th><button type="button" class="btn btn-danger">Del</button></th>
+		</tr>
+	</table>
+
+	<h5 style="margin-top: 20px;">Total Harga</h5>
+	<table class="tabelharga table table-bordered">
+		<tr class="bg-info">
+			<td>QTY</td>
+			<td>PRICE</td>
+		</tr>
+		<tr>
+			<td><input type="number" id="a" value=0></td>
+			<td><input type="number" id="aa" value=1></td>
+		</tr>
+		<tr>
+			<td><input type="number" id="b" value=0></td>
+			<td><input type="number" id="bb" value=1></td>
+		</tr>
+		<tr>
+			<td><input type="number" id="c" value=0></td>
+			<td><input type="number" id="cc" value=1></td>
+		</tr>
+		<tr>
+			<td style="text-align: center">Total</td>
+			<td id="hasil"></td>
+		</tr>
+
+	</table>
+</body>
+
+</html>
