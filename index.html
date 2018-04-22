@@ -1,4 +1,3 @@
-<!doctype html>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -10,52 +9,7 @@
 		<script src=jmobile/jquery.mobile-1.4.5.js></script>
 		<link rel="stylesheet" type="text/css" href="js/app.js">
 		<link rel="stylesheet" type="text/css" href="js/controllers/mainController.js">
-		<script type="text/javascript">
-			function hitungPangkat(){
-				var a = $("#a").val();
-				var b = $("#b").val();
-				document.getElementById("hasilPangkat").innerHTML = a**b;
-			}
-			function hitungFaktorial(){
-				var c = $("#c").val();
-				var hasil=c;
 
-				for (var i = c-1; i > 0; i--) {
-					hasil = hasil * i;
-				}
-				document.getElementById("hasilFaktorial").innerHTML = hasil;
-			}
-			function gantiBg(){
-				var r = $("#red").val();
-				var g = $("#green").val();
-				var b = $("#blue").val();
-				console.log(r + " " + g + " " + b);
-				document.getElementById("winpage2").style.background = "rgb("+r+","+g+","+b+")";
-			}
-			function lihatWarna(){
-				var r = $("#red").val();
-				var g = $("#green").val();
-				var b = $("#blue").val();
-				console.log(r + " " + g + " " + b);
-				document.getElementById("lihatwarna").style.background = "rgb("+r+","+g+","+b+")";
-			}
-
-
-			jQuery(document).ready(function() {
-				document.getElementById("button_pangkat").addEventListener("click", function(){
-					hitungPangkat();
-				});
-				document.getElementById("button_faktorial").addEventListener("click", function(){
-					hitungFaktorial();
-				});
-				document.getElementById("button_warnabg").addEventListener("click", function(){
-					gantiBg();
-				});
-				document.getElementById("button_lihatwarna").addEventListener("click", function(){
-					lihatWarna();
-				});
-	    });
-		</script>
 	</head>
 
 	<body>
@@ -100,15 +54,15 @@
 				<form>
 					<h3>MENGHITUNG PANGKAT</h3>
 					<label for="number-a" >masukkan angka basis</label>
-						<input type="number" name="number-a" data-clear-btn="true" value="0" id="a" >
+						<input type="number" name="number-a" data-clear-btn="true" id="a" >
 					<label for="number-b" >masukkan angka pangkat</label>
-						<input type="number" name="number-b" data-clear-btn="true" value="0" id="b" >
+						<input type="number" name="number-b" data-clear-btn="true" id="b" >
 					<input type="button" value="HITUNG PANGKAT" id="button_pangkat">
 					<p style="border: 1px solid black;">HASIL PANGKAT: <span id="hasilPangkat"> </span></p>
 
 					<br><h3>MENGHITUNG FAKTORIAL</h3>
 					<label for="number-c" >masukkan angka</label>
-						<input type="number" name="number-c" data-clear-btn="true" value="0" id="c" >
+						<input type="number" name="number-c" data-clear-btn="true" id="c" >
 					<p style="border: 1px solid black;">HASIL FAKTORIAL: <span id="hasilFaktorial"> </span></p>
 					<input type="button" value="HITUNG FAKTORIAL" id="button_faktorial">
 				</form>
@@ -133,10 +87,10 @@
 						<li><a href="#winpage3">RANGKUMAN MATERI</a></li>
 					</ul>
 				</div>
-				<label for="slider-3">RED: </label>
-					<input name="slider-3" id="red" min="0" max="255" value="0" data-popup-enabled="true" type="range">
-				<label for="slider-3">GREEN: </label>
-					<input name="slider-3" id="green" min="0" max="255" value="0" data-popup-enabled="true" type="range" >
+				<label for="slider-1">RED: </label>
+					<input name="slider-1" id="red" min="0" max="255" value="0" data-popup-enabled="true" type="range">
+				<label for="slider-2">GREEN: </label>
+					<input name="slider-2" id="green" min="0" max="255" value="0" data-popup-enabled="true" type="range" >
 				<label for="slider-3">BLUE: </label>
 					<input name="slider-3" id="blue" min="0" max="255" value="0" data-popup-enabled="true" type="range" >
 
@@ -224,5 +178,50 @@
 		</div>
 
 	</body>
+	<script>
+		function hitungPangkat(){
+			var a = $("#a").val();
+			var b = $("#b").val();
+			document.getElementById("hasilPangkat").innerHTML = a**b;
+		}
+		function hitungFaktorial(){
+			var c = $("#c").val();
+			var hasil=c;
 
+			for (var i = c-1; i > 0; i--) {
+				hasil = hasil * i;
+			}
+			document.getElementById("hasilFaktorial").innerHTML = hasil;
+		}
+		function gantiBg(){
+			var r = $("#red").val();
+			var g = $("#green").val();
+			var b = $("#blue").val();
+			console.log(r + " " + g + " " + b);
+			document.getElementById("winpage2").style.background = "rgb("+r+","+g+","+b+")";
+		}
+		function lihatWarna(){
+			var r = $("#red").val();
+			var g = $("#green").val();
+			var b = $("#blue").val();
+			console.log(r + " " + g + " " + b);
+			document.getElementById("lihatwarna").style.background = "rgb("+r+","+g+","+b+")";
+		}
+
+
+		$(document).ready(function() {
+			document.getElementById("button_pangkat").addEventListener("click", function(){
+				hitungPangkat();
+			});
+			document.getElementById("button_faktorial").addEventListener("click", function(){
+				hitungFaktorial();
+			});
+			document.getElementById("button_warnabg").addEventListener("click", function(){
+				gantiBg();
+			});
+			document.getElementById("button_lihatwarna").addEventListener("click", function(){
+				lihatWarna();
+			});
+		});
+	</script>
 </html>
