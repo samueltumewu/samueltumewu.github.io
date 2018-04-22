@@ -10,6 +10,52 @@
 		<script src=jmobile/jquery.mobile-1.4.5.js></script>
 		<link rel="stylesheet" type="text/css" href="js/app.js">
 		<link rel="stylesheet" type="text/css" href="js/controllers/mainController.js">
+		<script type="text/javascript">
+			function hitungPangkat(){
+				var a = $("#a").val();
+				var b = $("#b").val();
+				document.getElementById("hasilPangkat").innerHTML = a**b;
+			}
+			function hitungFaktorial(){
+				var c = $("#c").val();
+				var hasil=c;
+
+				for (var i = c-1; i > 0; i--) {
+					hasil = hasil * i;
+				}
+				document.getElementById("hasilFaktorial").innerHTML = hasil;
+			}
+			function gantiBg(){
+				var r = $("#red").val();
+				var g = $("#green").val();
+				var b = $("#blue").val();
+				console.log(r + " " + g + " " + b);
+				document.getElementById("winpage2").style.background = "rgb("+r+","+g+","+b+")";
+			}
+			function lihatWarna(){
+				var r = $("#red").val();
+				var g = $("#green").val();
+				var b = $("#blue").val();
+				console.log(r + " " + g + " " + b);
+				document.getElementById("lihatwarna").style.background = "rgb("+r+","+g+","+b+")";
+			}
+
+
+			jQuery(document).ready(function() {
+				document.getElementById("button_pangkat").addEventListener("click", function(){
+					hitungPangkat();
+				});
+				document.getElementById("button_faktorial").addEventListener("click", function(){
+					hitungFaktorial();
+				});
+				document.getElementById("button_warnabg").addEventListener("click", function(){
+					gantiBg();
+				});
+				document.getElementById("button_lihatwarna").addEventListener("click", function(){
+					lihatWarna();
+				});
+	    });
+		</script>
 	</head>
 
 	<body>
@@ -26,7 +72,7 @@
 						<li><a href="#winpage2">MELIHAT WARNA</a></li>
 						<li><a href="#winpage3">RANGKUMAN MATERI</a></li>
 					</ul>
-				</div>		
+				</div>
 
 				<div class="bagianBawah">
 					<p><a href="#winpage1">lanjut ke halaman kedua</a></p>
@@ -50,7 +96,7 @@
 						<li><a href="#winpage2">MELIHAT WARNA</a></li>
 						<li><a href="#winpage3">RANGKUMAN MATERI</a></li>
 					</ul>
-				</div>		
+				</div>
 				<form>
 					<h3>MENGHITUNG PANGKAT</h3>
 					<label for="number-a" >masukkan angka basis</label>
@@ -86,7 +132,7 @@
 						<li><a href="#winpage2">MELIHAT WARNA</a></li>
 						<li><a href="#winpage3">RANGKUMAN MATERI</a></li>
 					</ul>
-				</div>		
+				</div>
 				<label for="slider-3">RED: </label>
 					<input name="slider-3" id="red" min="0" max="255" value="0" data-popup-enabled="true" type="range">
 				<label for="slider-3">GREEN: </label>
@@ -94,13 +140,13 @@
 				<label for="slider-3">BLUE: </label>
 					<input name="slider-3" id="blue" min="0" max="255" value="0" data-popup-enabled="true" type="range" >
 
-				<input type="button" value="GANTI WARNA BACKGROUND" id="button_warnabg"> 
+				<input type="button" value="GANTI WARNA BACKGROUND" id="button_warnabg">
 				<br><br>
 
 				<a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Read ME</a>
 					<div data-role="popup" id="popupBasic">
 						<p>Tombol "Lihat Warna" untuk memunculkan warna di kotak yang telah disediakan dibawah</p>
-					</div>	
+					</div>
 				<input type="button" value="LIHAT WARNA" id="button_lihatwarna">
 				<div id="lihatwarna" ></div>
 
@@ -116,7 +162,7 @@
 				<h1>WINDOW 2</h1>
 			</div>
 
-			<div data-role=content>			
+			<div data-role=content>
 				<div data-role="collapsible" data-collapsed="true" style="margin-bottom: 50px;">
 					 <h4>NAVIGASI COMBOBOX</h4>
 	  				 <ul data-role="listview" id="listview">
@@ -124,7 +170,7 @@
 						<li><a href="#winpage2">MELIHAT WARNA</a></li>
 						<li><a href="#winpage3">RANGKUMAN MATERI</a></li>
 					</ul>
-				</div>		
+				</div>
 
 				<h3>Rangkuman Materi PPM</h3>
 				<table data-role="table" id="table-column-toggle" data-mode="columntoggle" class="ui-responsive table-stroke" data-column-btn-text="Kolom yang ingin dilihat">
@@ -159,11 +205,11 @@
 				</div>
 				<div data-role="panel" id="panel_github" data-position="right">
  					 <h4>GITHUB</h4>
- 					 <p>Github adalah sebuah aplikasi version control sistem</p> 
+ 					 <p>Github adalah sebuah aplikasi version control sistem</p>
  				</div>
  				<div data-role="panel" id="panel_jquery">
  					 <h4>JQUERY</h4>
- 					 <p>Jquery adalah framework untuk tampilan web, koding lebih mudah jika memakai framework</p> 
+ 					 <p>Jquery adalah framework untuk tampilan web, koding lebih mudah jika memakai framework</p>
  					 <p>jquery tersedia juga dalam jquerymobile</p>
  				</div>
  				<div data-role="panel" id="panel_angularJS" data-position="right">
@@ -179,46 +225,4 @@
 
 	</body>
 
-	<script type="text/javascript">
-		function hitungPangkat(){
-			var a = $("#a").val();
-			var b = $("#b").val();
-			document.getElementById("hasilPangkat").innerHTML = a**b;
-		}
-		function hitungFaktorial(){
-			var c = $("#c").val();
-			var hasil=c;
-
-			for (var i = c-1; i > 0; i--) {
-				hasil = hasil * i;
-			}
-			document.getElementById("hasilFaktorial").innerHTML = hasil;
-		}
-		function gantiBg(){
-			var r = $("#red").val();
-			var g = $("#green").val();
-			var b = $("#blue").val();
-			console.log(r + " " + g + " " + b);
-			document.getElementById("winpage2").style.background = "rgb("+r+","+g+","+b+")";
-		}
-		function lihatWarna(){
-			var r = $("#red").val();
-			var g = $("#green").val();
-			var b = $("#blue").val();
-			console.log(r + " " + g + " " + b);
-			document.getElementById("lihatwarna").style.background = "rgb("+r+","+g+","+b+")";
-		}
-		document.getElementById("button_pangkat").addEventListener("click", function(){
-			hitungPangkat();
-		});
-		document.getElementById("button_faktorial").addEventListener("click", function(){
-			hitungFaktorial();
-		});
-		document.getElementById("button_warnabg").addEventListener("click", function(){
-			gantiBg();
-		});
-		document.getElementById("button_lihatwarna").addEventListener("click", function(){
-			lihatWarna();
-		});
-	</script>
 </html>
